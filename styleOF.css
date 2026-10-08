@@ -1,0 +1,700 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   VARIÁVEIS
+======================================== */
+
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-light: #eef2ff;
+
+    --green: #16a34a;
+    --green-light: #dcfce7;
+
+    --red: #dc2626;
+    --red-light: #fee2e2;
+
+    --blue: #2563eb;
+    --blue-light: #dbeafe;
+
+    --background: #f1f5f9;
+    --white: #ffffff;
+
+    --text: #0f172a;
+    --text-secondary: #64748b;
+    --border: #e2e8f0;
+
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 8px 25px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 18px 45px rgba(15, 23, 42, 0.12);
+
+    --radius: 18px;
+}
+
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(99, 102, 241, 0.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 100%,
+            rgba(37, 99, 235, 0.08),
+            transparent 30%
+        ),
+        var(--background);
+
+    padding: 50px 20px;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container {
+    width: 100%;
+    max-width: 920px;
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+h1 {
+    text-align: center;
+
+    font-size: 38px;
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 38px;
+
+    color: var(--text);
+}
+
+
+/* ========================================
+   RESUMO
+======================================== */
+
+.resumo {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+
+/* ========================================
+   CARDS
+======================================== */
+
+.card {
+    position: relative;
+
+    background: var(--white);
+
+    padding: 25px;
+
+    border-radius: var(--radius);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-md);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Barra superior */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: var(--primary);
+}
+
+
+/* Cores individuais das barras */
+
+.card:nth-child(1)::before {
+    background: var(--green);
+}
+
+.card:nth-child(2)::before {
+    background: var(--red);
+}
+
+.card:nth-child(3)::before {
+    background: var(--blue);
+}
+
+
+/* Hover */
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* Título */
+
+.card h2 {
+    font-size: 13px;
+    font-weight: 700;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* Valor */
+
+.card p {
+    font-size: 27px;
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+}
+
+
+/* ========================================
+   CORES DOS VALORES
+======================================== */
+
+#totalReceitas {
+    color: var(--green);
+}
+
+#totalDespesas {
+    color: var(--red);
+}
+
+#saldo {
+    color: var(--blue);
+}
+
+
+/* ========================================
+   FORMULÁRIO E MOVIMENTAÇÕES
+======================================== */
+
+.formulario,
+.movimentacoes {
+    background: rgba(255, 255, 255, 0.96);
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    border-radius: var(--radius);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* ========================================
+   TÍTULOS DAS SEÇÕES
+======================================== */
+
+.formulario h2,
+.movimentacoes h2 {
+    font-size: 21px;
+    font-weight: 750;
+
+    margin-bottom: 25px;
+
+    color: var(--text);
+}
+
+
+/* Pequeno detalhe visual no título */
+
+.formulario h2::after,
+.movimentacoes h2::after {
+    content: "";
+
+    display: block;
+
+    width: 38px;
+    height: 4px;
+
+    margin-top: 8px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+}
+
+
+/* ========================================
+   CAMPOS
+======================================== */
+
+.campo {
+    margin-bottom: 20px;
+}
+
+
+.campo label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    color: #334155;
+}
+
+
+/* ========================================
+   INPUTS E SELECT
+======================================== */
+
+input,
+select {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Placeholder */
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+
+/* Hover */
+
+input:hover,
+select:hover {
+    border-color: #cbd5e1;
+}
+
+
+/* Foco */
+
+input:focus,
+select:focus {
+    background: var(--white);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(99, 102, 241, 0.12);
+}
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+#btnAdicionar {
+    width: 100%;
+
+    padding: 15px 20px;
+
+    margin-top: 4px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #818cf8
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(99, 102, 241, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Hover */
+
+#btnAdicionar:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(99, 102, 241, 0.30);
+}
+
+
+/* Clique */
+
+#btnAdicionar:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 5px 12px
+        rgba(99, 102, 241, 0.20);
+}
+
+
+/* ========================================
+   LISTA
+======================================== */
+
+#listaMovimentacoes {
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* ========================================
+   ITEM
+======================================== */
+
+#listaMovimentacoes li {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hover */
+
+#listaMovimentacoes li:hover {
+    background: var(--white);
+
+    transform: translateX(4px);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* ========================================
+   DESCRIÇÃO
+======================================== */
+
+.descricao-movimentacao {
+    flex: 1;
+
+    font-size: 15px;
+
+    font-weight: 650;
+
+    color: #334155;
+
+    word-break: break-word;
+}
+
+
+/* ========================================
+   VALOR
+======================================== */
+
+.valor-movimentacao {
+    font-size: 14px;
+
+    font-weight: 750;
+
+    white-space: nowrap;
+
+    padding: 7px 11px;
+
+    border-radius: 9px;
+}
+
+
+/* Receita */
+
+.valor-movimentacao.receita {
+    color: var(--green);
+
+    background: var(--green-light);
+}
+
+
+/* Despesa */
+
+.valor-movimentacao.despesa {
+    color: var(--red);
+
+    background: var(--red-light);
+}
+
+
+/* ========================================
+   BOTÃO EXCLUIR
+======================================== */
+
+.btn-excluir {
+    width: auto;
+
+    padding: 8px 13px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--red-light);
+
+    color: var(--red);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Hover */
+
+.btn-excluir:hover {
+    background: var(--red);
+
+    color: white;
+
+    transform: scale(1.04);
+}
+
+
+/* ========================================
+   MENSAGEM VAZIA
+======================================== */
+
+.mensagem-vazia {
+    text-align: center;
+
+    padding: 40px 20px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline:
+        3px solid
+        rgba(99, 102, 241, 0.25);
+
+    outline-offset: 2px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 31px;
+
+        margin-bottom: 28px;
+    }
+
+    .resumo {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .card {
+        padding: 21px;
+    }
+
+    .card p {
+        font-size: 25px;
+    }
+
+    .formulario,
+    .movimentacoes {
+        padding: 22px;
+    }
+}
+
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 22px 12px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .formulario,
+    .movimentacoes {
+        padding: 19px;
+    }
+
+    #listaMovimentacoes li {
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        padding: 14px;
+    }
+
+    .descricao-movimentacao {
+        width: 100%;
+
+        flex-basis: 100%;
+    }
+
+    .valor-movimentacao {
+        flex: 1;
+    }
+
+    .btn-excluir {
+        flex-shrink: 0;
+    }
+}
+footer{
+    color: black;
+    text-align: center;
+    font-style: italic;
+
+}
