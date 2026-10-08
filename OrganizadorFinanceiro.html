@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Controle Financeiro</title>
+
+    <link rel="stylesheet" href="styleOF.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Controle Financeiro</h1>
+
+        <section class="resumo">
+
+            <div class="card">
+                <h2>Receitas</h2>
+                <p id="totalReceitas">R$ 0,00</p>
+            </div>
+
+            <div class="card">
+                <h2>Despesas</h2>
+                <p id="totalDespesas">R$ 0,00</p>
+            </div>
+
+            <div class="card">
+                <h2>Saldo</h2>
+                <p id="saldo">R$ 0,00</p>
+            </div>
+
+        </section>
+
+        <section class="formulario">
+
+            <h2>Nova movimentação</h2>
+
+            <div class="campo">
+                <label for="descricao">Descrição</label>
+
+                <input
+                    type="text"
+                    id="descricao"
+                    placeholder="Ex: Salário, aluguel, supermercado..."
+                    maxlength="100"
+                >
+            </div>
+
+            <div class="campo">
+                <label for="valor">Valor</label>
+
+                <input
+                    type="number"
+                    id="valor"
+                    placeholder="0,00"
+                    min="0.01"
+                    step="0.01"
+                >
+            </div>
+
+            <div class="campo">
+                <label for="tipo">Tipo</label>
+
+                <select id="tipo">
+                    <option value="receita">Receita</option>
+                    <option value="despesa">Despesa</option>
+                </select>
+            </div>
+
+            <button id="btnAdicionar" type="button">
+                Adicionar movimentação
+            </button>
+
+        </section>
+
+        <section class="movimentacoes">
+
+            <h2>Movimentações</h2>
+
+            <ul id="listaMovimentacoes"></ul>
+
+            <p id="mensagemVazia" class="mensagem-vazia">
+                Nenhuma movimentação cadastrada.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="scriptOrgFin.js"></script>
+
+</body>
+<footer>
+        <p>&copy; Guilherme de S</p>
+</footer>
+</html>
